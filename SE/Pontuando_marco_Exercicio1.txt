@@ -1,0 +1,154 @@
+//Exercicio 1
+
+
+void setup(){ /* "void setup()" é usado para inicializar variáveis,
+modos de pinos, entre outros */
+
+  /*"pinMode serve para configurar um pino específico (do arduino) para se 
+  comportar como um pino de entrada(INPUT) ou de saída(OUTPUT)"*/
+  
+  //Primeiro grupo de LEDs
+  pinMode(11,OUTPUT);
+  pinMode(12,OUTPUT);
+  pinMode(13,OUTPUT);
+  
+  //Primeiro grupo de LEDs
+  pinMode(6,OUTPUT);
+  pinMode(5,OUTPUT);
+  pinMode(4,OUTPUT);
+  pinMode(3,OUTPUT);
+  pinMode(2,OUTPUT);
+  pinMode(1,OUTPUT);
+  pinMode(0,OUTPUT);
+  
+}
+
+void loop(){//Serve para criar um ciclo de repetição
+  
+  //Acende o LED Verde
+  
+  digitalWrite(13, HIGH);/* "digitalWrite" escreve um valor HIGH 
+  (alto) ou LOW (baixo) em um pino digital que tenha sido 
+  configurado como OUTPUT (saída). Leia mais no fim do code¹
+  */
+  
+  delay(1000); 
+  
+  //faz isso
+  
+  digitalWrite(6, HIGH);
+  delay(1000); // Aguarda 1000 milissegundo(s)
+  digitalWrite(6, LOW);
+  delay(500); // Aguarde 300 milissegundo(s)
+  
+  digitalWrite(5, HIGH);
+  delay(1000); 
+  digitalWrite(5, LOW);
+  delay(500); 
+  
+  digitalWrite(3, HIGH);
+  delay(1000); 
+  digitalWrite(3, LOW);
+  delay(500); 
+  
+  digitalWrite(1, HIGH);
+  delay(1000); 
+  digitalWrite(1, LOW);
+  delay(500);
+  
+  digitalWrite(0, HIGH);
+  delay(1000); 
+  digitalWrite(0, LOW);
+  delay(500); 
+  
+  digitalWrite(4, HIGH);
+  delay(1000); 
+  digitalWrite(4, LOW);
+  delay(500); 
+  
+  digitalWrite(2, HIGH);
+  delay(1000); 
+  digitalWrite(2, LOW);
+  delay(500); 
+  
+  //Apaga o LED verde
+  digitalWrite(13, LOW);
+  delay(500);
+  
+  //Acende LED Amarelo
+  
+  digitalWrite(12, HIGH);
+  delay(1000); 
+  
+   //faz isso
+  
+  for(int contador = 1; contador <= 3; contador++){//"for usado para piscar os três LEDs juntos três vezes"
+    
+    digitalWrite(6, HIGH);
+    delay(700);
+    digitalWrite(5, HIGH);
+    delay(700);
+    digitalWrite(4, HIGH);
+    delay(700);
+    digitalWrite(3, HIGH);
+    delay(700);
+    digitalWrite(2, HIGH);
+    delay(700);
+    digitalWrite(1, HIGH);
+    delay(700);
+    digitalWrite(0, HIGH);
+    delay(700);
+    
+    digitalWrite(6, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(1, LOW);
+    digitalWrite(0, LOW);
+    
+    delay(700);
+}    
+  
+   //Apaga o LED Amarelo
+  digitalWrite(12, LOW);
+  delay(500); 
+  
+  
+  //Acende LED Vermelho
+  
+  digitalWrite(11, HIGH);
+  delay(1000);
+  
+  for(int contador = 1; contador <= 3; contador++){//"for usado para piscar os três LEDs juntos três vezes"
+    
+    digitalWrite(6, HIGH);
+    digitalWrite(5, HIGH);
+    digitalWrite(4, HIGH);
+    digitalWrite(3, HIGH);
+    digitalWrite(2, HIGH);
+    digitalWrite(1, HIGH);
+    digitalWrite(0, HIGH);
+    delay(700);
+    
+     digitalWrite(6, LOW);
+    digitalWrite(5, LOW);
+    digitalWrite(4, LOW);
+    digitalWrite(3, LOW);
+    digitalWrite(2, LOW);
+    digitalWrite(1, LOW);
+    digitalWrite(0, LOW);
+    
+    delay(700);
+}    
+  
+  //Apaga o LED VErmelho
+  digitalWrite(11, LOW);;
+  delay(500);
+  
+  
+}
+
+
+/*  ¹ O valor HIGH equivale a uma tensao de 5V e o valor LOW, 
+a uma tensao elétrica de 0V.*/
