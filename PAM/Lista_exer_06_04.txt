@@ -1,0 +1,223 @@
+QUESTÃO 1
+
+//Criando a classe Funcionario
+class Funcionario{
+
+    //Criando as variaveis
+    var Nome: String = "" 
+    var Nascimento: String = "09/06/2006" 
+    var Salario: Double = 3000.00 
+    
+    //Criando a função InformarSalario e printnado
+    fun InformarSalario () {
+        
+        println("O salário do funcionario $Nome é de $Salario reais")
+    }
+    
+    //Criando a função InformarIdade e printnado
+    fun InformarIdade () {
+        
+        println("A idade do funcionario $Nome é $Nascimento")
+    }
+    
+    //Criando a função Andar e printnado
+    fun Andar() {
+      
+        println("$Nome andou até a sala de seu superior")
+    }
+    
+    //Criando a função falar e printnado    
+    fun Falar() {
+    	
+        println("$Nome falou com seu superior")
+    }
+    
+        //Criando a função Beber e printnado
+    fun Beber() {
+     	
+        println("$Nome bebeu água")
+    }
+    
+    
+        //Criando a função comer e printnado
+    fun Comer() {
+      
+        println("$Nome comeu sua marmita na hora do almoço")
+    }
+    
+}
+
+//Criando o metodo main e chamando as funs
+fun main() {
+    var Fun = Funcionario()
+    Fun.InformarSalario()
+    Fun.InformarIdade()
+    Fun.Andar()
+    Fun.Falar()
+    Fun.Beber()
+    Fun.Comer()
+   
+}
+
+
+
+QUESTÃO 2
+
+//Criando a classe
+class Sobreposicao (){
+    
+    //Criando as funs com parametros
+    fun quadrado(i: Int): Int {
+        return i*i
+    }
+    
+    fun quadrado(f: Double): Double {
+        return f*f
+    } 
+}
+
+//Criando o metodo main
+fun main(args: Array<String>) {
+
+//Instanciando
+    val Sobre = Sobreposicao()
+     
+    //printando resulatado
+    println ("Quadrado de 3: " + Sobre.quadrado(3))
+    println ("Quadrado de 3.5: " + Sobre.quadrado(3.5))
+     
+   
+}
+
+QUESTÃO 3	
+
+
+//Abrindo classe Externa
+open class Externa {
+
+    //criando a variavel
+    var x = 7
+    
+    //Criando a fun fazendo uma instancia de outra fun
+    fun instanciaInterna(){
+    
+    //fazendo uma instancia de outra fun
+       val Inter = Interna()
+        
+        //Fazendo a chamada de uma fun   
+        Inter.imprimeExterna()
+    }
+    
+    //Criando a classe
+    class Interna: Externa () {
+    
+    //criando a fun
+        fun imprimeExterna(){
+        
+        //printando resultado
+            println("x vale $x")
+        }
+    }
+ 
+}
+
+
+//Criando metodo main
+fun main() {
+    
+    //fazendo uma instancia
+    var Exter =  Externa()
+    
+    //chamando uma fun
+    Exter.instanciaInterna()
+    
+    
+}
+
+QUESTÃO 4
+
+
+
+//criando a classe e suas vars 
+class Pessoa{
+    var Nome: String = "" 
+    var RG: String = "" 
+    var CPF: String = "" 
+    var Idade: Int = 0
+    var Endereco: String = ""
+    var FoneResidencial: String = ""
+    var FoneComercial: String = ""
+    var Celular: String = ""
+    var NomePai: String = ""
+    var NomeMae: String = ""
+    var NomeConjuge: String = ""
+    var Sexo: String = ""
+    
+    
+    
+   //criando a fun que recebe os dados
+    fun CadastrarPessoa () {
+        
+        
+        Nome = "Nycolas"
+        RG = "0101010101"
+        CPF = "1234566789"
+        Idade = 16
+        Endereco = "ETEC"
+        FoneResidencial = "25252525"
+        FoneComercial ="52525252"
+        Celular = "(11) 977868686"
+        NomePai = "José"
+        NomeMae = "Ray"
+        NomeConjuge = "A cinta do meu pai"
+        Sexo = "M"
+    }
+    
+    //criando a fun para mostras os dados
+    fun ListarCadastro () {
+        print("Nome: ")
+        println(Nome )
+        
+        print("RG: ")
+        println(RG)
+        
+        print("CPF: ")
+        println(CPF)
+        
+        print("Idade: ")
+        println(Idade)
+        
+        print("Endereço:")
+        println(Endereco)
+        
+        print("Telefone residencial: ")
+        println(FoneResidencial)
+        
+        print("Telefone comercial ")
+        println(FoneComercial)
+        
+        print("Celular: ")
+        println(Celular)
+        
+        print("Nome do pai: ")
+        println (NomePai)
+        
+        print("Nome da mãe: ")
+        println (NomeMae)
+        
+        print("Nome do conjugê: ")
+        println (NomeConjuge) 
+        
+        print("Sexo: ")
+        println (Sexo) 
+    }
+    
+}
+
+
+//criando o metodo main para chamar as funs
+fun main() {
+   val p = Pessoa()
+   p.CadastrarPessoa()
+   p.ListarCadastro()
+}
