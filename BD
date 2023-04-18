@@ -1,0 +1,30 @@
+
+/*Criando o banco de dados*/
+create database Cursos_Aperfeicoamento;
+
+/*Abrindo o banco de dados*/
+use Cursos_Aperfeicoamento;
+
+/*Criação de tabela*/
+create table Curso (
+
+Ncurso int primary key,
+Conteudo varchar (800) not null,
+ValorCurso varchar (200) not null,
+CargaHoraria (100) not null,
+)
+
+
+create table Professor(
+
+IdProfessor int primary key,
+Nome varchar (100) not null,
+Telefone varchar (20) not null,
+ValorHora varchar (100) not nnull,
+)
+
+crate table Turma(
+
+IdTurma int primary key,
+IdProfessor
+)
