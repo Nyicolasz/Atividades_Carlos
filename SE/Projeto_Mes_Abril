@@ -1,0 +1,49 @@
+// C++ code
+//
+//Variaveis
+int LED = 2;
+int Botao = 3;
+int Buzzer = 4;
+int Poten = A5;
+int ValorPoten = 0;
+int Brilho = 0;
+boolean EstadoBotao;
+
+void setup()
+{
+  //Definindo como entrada ou saida
+  pinMode(Buzzer, OUTPUT);
+  pinMode(Botao, INPUT);
+  pinMode(LED, OUTPUT);
+  pinMode(Poten, INPUT);
+}
+
+void loop(){
+  
+    //Recebendo estado dos componentes
+    EstadoBotao = digitalRead(Botao);
+    ValorPoten = analogRead(Poten);
+  
+    //estrutura de decisão
+
+   //Ao apertar o botão
+   if (EstadoBotao){
+
+      digitalWrite(LED, HIGH);
+      tone(Buzzer,  264 * 9, 1);
+      digitalWrite(LED, LOW);
+      }
+ 
+  
+     
+	//Ao mexer no potenciometro
+  
+    else if (ValorPoten > 150){
+      
+      Brilho = map (ValorPoten, 0, 1023, 0, 255);
+      analogWrite(LED, Brilho);
+      Serial.println(ValorPoten);
+      tone(Buzzer,  264 * 9, 120);
+    }
+}
+  
